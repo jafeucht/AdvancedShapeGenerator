@@ -1,0 +1,192 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033\deflangfe1033{\fonttbl{\f0\froman\fprq2\fcharset0 Times New Roman;}{\f1\fmodern\fprq1\fcharset0 Courier New;}}
+{\colortbl ;\red0\green0\blue255;\red128\green128\blue128;}
+\viewkind4\uc1\pard\nowidctlpar\qc\b\f0\fs36 csShape Class\par
+\pard\nowidctlpar\b0\fs20\par
+\pard\nowidctlpar\qc\b\fs24 Created in Visual Basic 4\cf1\ul\b0\fs20\par
+\par
+\pard\brdrb\brdrs\brdrw20\brsp20 \nowidctlpar\cf0\ulnone\par
+\pard\brdrb\brdrs\brdrw30\brsp20 \nowidctlpar\b 1.0\tab Introduction\par
+\pard\nowidctlpar\b0 This file is meant to briefly overview the csShape class. It covers the concept of sequencing vectors, or repeating through an array of vectors to create a complex form. It describes the TestShape program, which is a demonstration of the aspects of the tool. It also describes how to use the class control in your own Visual Basic code in detail.\par
+\pard\brdrb\brdrs\brdrw20\brsp20 \nowidctlpar\b\par
+\pard\brdrb\brdrs\brdrw30\brsp20 \nowidctlpar 2.0\tab Contents\par
+\pard\nowidctlpar\b0\par
+\pard\brdrb\brdrs\brdrw20\brsp20 \nowidctlpar\tx720\b 1.0\b0\tab Introduction\par
+\b 2.0\b0\tab Contents\par
+\b 3.0\b0\tab Overview of project directory\par
+\pard\brdrb\brdrs\brdrw20\brsp20 \nowidctlpar\fi-720\li720\tx720\b 4.0\tab\b0 Concept of sequencing vectors\par
+\pard\brdrb\brdrs\brdrw20\brsp20 \nowidctlpar\tx720\b 5.0\tab\b0 Using the test application\par
+\b 6.0\b0\tab Using the screen saver application\par
+\b 7.0\b0\tab Using the csShape class\par
+\b 8.0\b0\tab Contact\par
+\pard\brdrb\brdrs\brdrw20\brsp20 \nowidctlpar\par
+\pard\brdrb\brdrs\brdrw30\brsp20 \nowidctlpar\b 3.0\tab Overview of project directory\par
+\pard\nowidctlpar\b0\par
+The Shape3 DLL environment included in this package includes 20 files total, which make up three projects plus miscellaneous files. The files included are listed below.\par
+\par
+Files linked to the csShape ActiveX DLL:\par
+\par
+Shape.cls\tab Main class file.\par
+Shape.vbp\tab Main class project.\par
+\par
+Files linked to the TestShape application:\par
+\par
+Shape3.vbg \par
+TestShape.vbp\tab Test application.\par
+frmMDI.frm\par
+frmTest.frm\par
+frmToolbox.frm\par
+mdTest.bas\par
+\par
+Files linked to the ShapeScnSaver application:\par
+\par
+ScnSaver.vbg\par
+ScreenSaver.vbp\par
+frmAbout.frm\par
+frmAbout.frx\par
+frmConfig.frm\par
+frmConfig.frx\par
+frmScreenSaver.frm\par
+frmScreenSaver.frx\par
+mdScreenSaver.bas\par
+\par
+Miscellaneous other files included:\par
+\par
+Example.gif\par
+ReadMe.rtf\par
+ScreenSaver.ico\par
+\par
+\pard\brdrb\brdrs\brdrw20\brsp20 \nowidctlpar Open the file "Shape3.vbg" to load both the csShape class with the test application.\par
+\par
+\pard\brdrb\brdrs\brdrw30\brsp20 \nowidctlpar\b 4.0\tab Concept of sequencing vectors\par
+\pard\nowidctlpar\b0\par
+The purpose of the ShapeDLL application is to create ornate shapes by using a sequenced vector array algorithm. An array of one or more vectors consists in the formula for these shapes. When you start from a point on a field, walk forward forty meters then turn a certain angle to your left, and repeat that vector several times, eventually, you will find yourself at your starting position unless you are turning 360\'b0 or 0\'b0. Such a procedure for example would repeat itself four times with a 90\'b0 angle before making a perfect square, or three times with a 120\'b0 angle before making a triangle, or 5 times at 144\'b0 to create a pentagon. A vector of 25 at 90\'b0 creates a square with four sides 25 pixels in length each. Such a vector is expressed in the format "25<90:". \par
+\par
+Multiple vectors could be added to add complexity to a shape. For instance, the vector array 25 at 90\'b0 and 5 at 90\'b0 sequenced would create a rectangle with two sides 25 pixels long, and two sides 5 pixels long. The format for these two vectors stringed together follows the format "25<90:5<90:". Stringing vectors can be taken further to add complexity, for example, "58<214:28<66:30<133:18<171:32<286:42<181:62<285:29<57:23<2:14<330:".\par
+\par
+With the Shape class, any closed shape is possible and simple to create. This, and the fact that it is quick, easy to use, and customizable make it a useful tool in graphic applications. The TestShape project shows how it is easy to use the Shape class.\par
+\pard\brdrb\brdrs\brdrw20\brsp20 \nowidctlpar\par
+\pard\brdrb\brdrs\brdrw30\brsp20 \nowidctlpar\b 5.0\tab Using the test application\par
+\pard\nowidctlpar\b0\par
+The TestShape project supplies a general overview of the ShapeDLL project. The ShapeDLL was not written to show the full capability of the csShape. With the Toolbox, it is easy to customize vectors, zoom in on shapes, create color gradients into them, and more. To create a shape, go to File->New Shape. A new window appears. This is the shape drawing area.\par
+\par
+To open or close the Toolbox, go to Windows->Toolbox. The toolbox contains the following items from top to bottom:\par
+\par
+\pard\nowidctlpar\fi-2520\li2520\tx2160 X/Y Axis CheckBox\tab Determines if the program draws axis onto the selected shape form.\par
+Grid CheckBox\tab Determines if the program draws a grid onto the selected shape window.\par
+Vector Count Textbox\tab Adjusts the quantity of vectors in the selected shape.\par
+Vector Scrollbar\tab Selects which vector to display in the Angle and Length TextBoxes.\par
+Angle TextBox\tab Displays the angle property of the selected vector.\par
+Length TextBox\tab Displays the length property of the selected vector.\par
+Vector String Button\tab Allows user to create or view a shape in string format ("14<219:21<294:").\par
+Line Width TextBox\tab Adjusts the width of each line drawn onto the selected shape.\par
+Zoom TextBox\tab Adjusts the zoom level in percent of the selected shape.\par
+Rotate TextBox\tab Rotates the selected shape.\par
+Background Box\tab Adjusts the background color. Click on the box to adjust the color.\par
+Solid Option\tab Only allows main color in drawing the selected shape.\par
+Main Box\tab Determines the main color of the shape.\par
+Gradient Option\tab Allows color gradient between main and gradient colors when shape is being drawn.\par
+Gradient Box\tab Determines the secondary color of the shape, used for the color gradient.\par
+Random Button\tab Creates a random shape.\par
+\pard\nowidctlpar\par
+When editing the vector string, be sure to format the string correctly, or else unreadable portions of the string may not be read.\par
+\par
+After editing a shape, you can redraw it by clicking the left mouse button on the shape. Or you can move the axis by clicking the right mouse button on the shape.\par
+\pard\brdrb\brdrs\brdrw20\brsp20 \nowidctlpar\par
+\pard\brdrb\brdrs\brdrw30 \nowidctlpar\b 6.0\tab Using the screen saver application\par
+\pard\nowidctlpar\b0\par
+\pard\brdrb\brdrs\brdrw20\brsp20 \nowidctlpar Open the file \ldblquote ScnSaver.vbg\rdblquote  to load the csShape class with the ShapeScnSaver application. The screen saver is designed to run fed with command line arguments, following the syntax:\par
+\par
+\b\f1 /\b0\i Command hWnd\i0\par
+\par
+\f0 Command can be one of the following values:\par
+\f1\par
+\b /C\tab\b0\f0 Configure mode.\f1\par
+\b /A\b0\tab\f0 Password mode.\f1\par
+\b /S\b0\tab\f0 Screen saver mode.\f1\par
+\b /P\b0\tab\f0 Preview mode.\par
+\par
+The \i\f1 hWnd\i0\f0  argument is always passed as the handle to a containing box which to ascribe the application. If you view the display properties by right-clicking on the desktop, select Properties, and click on the Screen Saver tab, you will notice that the screen saver is sampled inside a box which is representative of the entire screen area. The handle of this box is passed in the \i\f1 hWnd\i0\f0  command line argument, which is only passed in password and preview mode.\par
+\par
+The code to the ScreenSaver project has been commented, and I would suggest their referral for further reference.\f1\par
+\f0\par
+\pard\brdrb\brdrs\brdrw30\brsp20 \nowidctlpar\b 7.0\tab Using the csShape class\par
+\pard\nowidctlpar\b0\par
+There are several things you need to do in order for the class to function. It is a multiuse class file, so it is necessary to create an instance in your application of this code. To do this, you would use the declaration:\par
+\par
+\cf2\f1\fs18 Dim WithEvents ShapeName As csShape\par
+\cf0\f0\fs20\par
+The\cf2\f1\fs18  WithEvents \cf0\f0\fs20 statement treats \i ShapeName\i0  as though it were an object on the form, so you can actually see \i ShapeName\i0  in the objects box in a code form. The csClass has one event that I used in the TestShape example to create the gradient effect on the shape. \cf2\f1\fs18 WithEvents\cf0\f0\fs20  is only used on classes such as the csClass, and you cannot create an instance by using the \cf2\f1 New\cf0\f0  command in the same line, such as: \par
+\cf2\f1\fs18\par
+Dim WithEvents \i ShapeName \i0 As New csShape ' Wrong!\fs20\par
+\cf0\f0\par
+After declaring your csShape class, it is necessary to actually assign the \i ShapeName\i0  variable to a new csShape object. You would do this in a procedure, preferably one of the first lines accessed in the module. In the TestShape project, I included this \cf2\f1\fs18 Form_Load\cf0\f0\fs20  event. The command looks as following:\par
+\par
+\cf2\f1\fs18 Set \i ShapeName \i0 = New csShape\par
+\fs20\par
+\cf0\f0 An example of creating a new instance of a class is given in frmTest. After creating the class, it is now fully functional to the user, although you first must assign the Field property of the csShape to an object it can draw to. Otherwise, the class has no information on where to draw.  You can do this by adding the following code:\par
+\cf2\f1\fs18\par
+Set \i ShapeName\i0 .Field = DrawSurface\par
+\cf0\f0\fs20\par
+Next, it is reccomended you set the scalemode of \i ShapeName\i0  to 3 - Pixels, or else the shape may be too small to see. After this, you are capable of drawing shapes. You can customize the shape by using some of the following properties, functions, and commands. \cf2\par
+\cf0\par
+\cf2\f1\fs18 Field\par
+\cf0\f0\fs20 Declares the drawing surface for the csShape class. For best results, set the field scalemode set to 3 - Pixels.\par
+\cf2\f1\fs18\par
+Event DrawLine(LineNum As Long, ByRef Color As Long)\par
+\cf0\f0\fs20 Occurs before a line is drawn to a field. Allows the user to change the color of the current line.\cf2\f1\par
+\par
+\fs18 Left (property)\par
+Top (property)\fs20\par
+\cf0\f0 Adjusts the positioning of the axis used in drawing.\par
+\cf2\f1\fs18\par
+Zoom (property)\fs20\par
+\cf0\f0 Adjusts the zoom levels (in percent) of the draw area.\par
+\cf2\f1\fs18\par
+Color (property)\fs20\par
+\cf0\f0 Adjusts the color of the shape control.\par
+\cf2\f1\fs18\par
+Rotate (property)\fs20\par
+\cf0\f0 Rotates the drawn image\par
+\par
+\cf2\f1\fs18 NumSequences() As Integer\par
+\cf0\f0\fs20 Returns the number of vector sequence loops necessary in order to create an enclosed shape.\par
+\cf2\f1\fs18\par
+DrawShape()As Long\fs20\par
+\cf0\f0 Draws the shape to the draw area\par
+\cf2\f1\fs18\par
+TakeVectorStr(MaskStr As String) As Long\fs20\par
+\cf0\f0 Allows user to input multiple vectors in a string of code (See 2.0).\par
+\cf2\f1\fs18\par
+CreateVectorStr() As String\fs20\par
+\cf0\f0 Returns a string containing the vectors.\par
+\cf2\f1\fs18\par
+GetVector(Index As Integer, ByRef Length As Double, ByRef Angle As Double)\fs20\par
+\cf0\f0 Returns the Length and Angle properties for vector #\i index\i0 .\par
+\cf2\f1\fs18\par
+SetVector(Index As Integer, Length As Double, Angle As Double)\fs20\par
+\cf0\f0 Sets the Length and Angle properties for vector #\i index\i0 .\par
+\cf2\f1\fs18\par
+AddVector(Index As Integer, Length As Double, Angle As Double)\fs20\par
+\cf0\f0 Adds a new vector as vector #\i index\i0  with the given properties for Length and Angle\par
+\cf2\f1\fs18\par
+SetVectorCnt(Value As Integer)\fs20\par
+\cf0\f0 Sets the number of vectors. All added vectors are 0<0\'b0.\par
+\cf2\f1\fs18\par
+RemoveVector(Index As Integer)\fs20\par
+\cf0\f0 Deletes vector #\i index\i0 .\par
+\cf2\f1\fs18\par
+ClearVectors()\fs20\par
+\cf0\f0 Deletes all vectors.\par
+\cf2\f1\fs18\par
+VectorCnt() As Integer\fs20\par
+\cf0\f0 Returns the number of vectors.\par
+\par
+To understand the code further, please view the comment lines provided in the code. Much of Shape.cls is commented densely for your convenience. Feel free to email me at my email address listed above, and I will answer any questions or comments you may have.\par
+\pard\brdrb\brdrs\brdrw20\brsp20 \nowidctlpar\par
+\pard\brdrb\brdrs\brdrw30\brsp20 \nowidctlpar\b 7.0\b0\tab Contact\par
+\pard\nowidctlpar\par
+Jonathan A. Feucht\par
+\pard\brdrb\brdrs\brdrw30\brsp20 \nowidctlpar\cf1\ul Feuchtersoft@hotmail.com\par
+\cf0\ulnone AIM SN: Feuchtersoft\b\fs36\par
+}
+ 
